@@ -1,0 +1,73 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+
+<p>
+    <form class="iwd_params-form" id="myForm">
+
+        <div class="drop-zone" id="drop">
+            <span class="drop-zone__prompt" id="prompt">Faça upload/ Arraste a Imagem </span>
+            <input type="file" id="inpFile" class="drop-zone__input" value="teste" required><br> @*A imagem é o unico campo obrigatório*@
+        </div>
+
+        <p>
+
+            <div class="iwd_param-container">
+                <div class="iwd_param-label"> <input type="checkbox" onclick="desabilitar('sim')" id="curl"> Converter usando Url</div>
+                <input class="iwd_param-input iwd_param-input__select" type="text" id="file" placeholder="Cole a Url da Imagem" disabled required> @*A imagem é o unico campo obrigatório*@
+
+            </div>
+
+            <div class="iwd_param-container">
+
+                <div class="iwd_param-label">Tipo de Papel</div>
+
+                <select class="iwd_param-input iwd_param-input__select" id="tamanho">
+                    <option value="Auto">Auto</option>
+                    <option value="A4">Padrão</option>
+                    <option value="A0">A0(841 x 1189)</option>
+                    <option value="A1">A1(594 x 841)</option>
+                    <option value="A2">A2(420 x 594)</option>
+                    <option value="A3">A3(297 x 420)</option>
+                    <option value="A4">A4(210 x 297)</option>
+                    <option value="A5">A5(148 x 210)</option>
+                    <option value="B0">B0(1000 x 1414)</option>
+                    <option value="B1">B1(707 x 1000)</option>
+                    <option value="B2">B2(500 x 707)</option>
+                    <option value="B3">B3(353 x 500)</option>
+                    <option value="B4">B4(257 x 364)</option>
+                    <option value="EXECUTIVE">EXECUTIVE(184 x 267)</option>
+                    <option value="LETTER">LETTER(216 x 279)</option>
+                </select>
+
+            </div>
+            <div class="custom"><input type="checkbox" onclick="rotate()" id="temp" checked> Orientação Automatica</div>
+        <p>
+
+            <div class="iwd_param-container">
+
+                <div class="iwd_switch-param-container" id="switch" hidden>
+
+                    <label class="iwd_switch-container">
+
+                        <input type="checkbox" id="paisagem" disabled><span id="teste" class="iwd_switch iwd_switch--light"></span>
+                    </label>
+
+                    <div class="iwd_switch-param-label iwd_switch-param-label--light">Orientação Paisagem</div>
+
+                </div>
+            </div>
+
+            <button type="submit" class="iwd_button iwd_button--secondary" id="converter">Converter Imagem para PDF</button>
+
+            <input type="reset" onclick="resetar()" value="Limpar" id="reset">
+
+    </form>
+
+
+
+
+
