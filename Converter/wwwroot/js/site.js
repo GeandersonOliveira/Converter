@@ -17,13 +17,13 @@ myForm.addEventListener("submit", e => { //evento é disparado após o botão su
 
     if (document.getElementById('paisagem').disabled == false) { //condicional para mandar o paramentro paisagem para api
 
-        ImagePdf = 'https://localhost:7037/api/ImagePdf' + '?file=' + fileUrl + '&tamanho=' + tamanho + '&paisagem=' + paisagem;
-        ImagePdfByFile = 'https://localhost:7037/api/ImagePdfByFile' + '?tamanho=' + tamanho + '&paisagem=' + paisagem;
+        ImagePdf = 'http://localhost:5000/api/ImagePdf' + '?file=' + fileUrl + '&tamanho=' + tamanho + '&paisagem=' + paisagem;
+        ImagePdfByFile = 'http://localhost:5000/api/ImagePdfByFile' + '?tamanho=' + tamanho + '&paisagem=' + paisagem;
 
     } else { //executa 'else' caso o campo paisagem esteja desabilitado (usuario optou por orientação automatica)
 
-        ImagePdf = 'https://localhost:7037/api/ImagePdf' + '?file=' + fileUrl + '&tamanho=' + tamanho; //caminho da api (atenção pode mudar a porta)
-        ImagePdfByFile = 'https://localhost:7037/api/ImagePdfByFile' + '?tamanho=' + tamanho; //caminho da api ( atenção pode mudar a porta)
+        ImagePdf = 'http://localhost:5000/api/ImagePdf' + '?file=' + fileUrl + '&tamanho=' + tamanho; //caminho da api (atenção pode mudar a porta)
+        ImagePdfByFile = 'http://localhost:5000/api/ImagePdfByFile' + '?tamanho=' + tamanho; //caminho da api ( atenção pode mudar a porta)
     }
 
 
